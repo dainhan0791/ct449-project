@@ -8,7 +8,7 @@
     aria-hidden="true"
   >
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+      <div class="modal-content " >
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">
             <h3>{{ movieStore.name }}</h3>
@@ -18,15 +18,16 @@
             class="btn-close"
             data-bs-dismiss="modal"
             aria-label="Close"
-            @click="movieStore.setCurrentMovie"
+            @click="setCurrentMovie"
           ></button>
         </div>
         <div class="modal-body">
           <YouTube
             :src="movieStore.videoEmbed"
-            @ready="onReady"
             ref="youtube"
             class="youtube"
+            style="max-width: 640px"
+            
           />
         </div>
         <div class="modal-footer">
@@ -34,7 +35,7 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
-            @click="movieStore.setCurrentMovie"
+            @click="setCurrentMovie"
           >
             Close
           </button>
@@ -47,20 +48,27 @@
 <script>
 import YouTube from "vue3-youtube";
 import { useMovieStore } from "../../stores/MovieStore";
+import {createToaster} from '@meforma/vue-toaster';
+
 export default {
   components: {
     YouTube,
   },
   data() {
     return {
-      movieStore: useMovieStore()
+      movieStore: useMovieStore(),
+      toaster: createToaster({
+        position: "top-right",
+        dismissible: false,
+      }),
     }
   },
   methods: {
-    onReady() {
-      this.$refs.youtube.playVideo();
-    },
-    
-  },
+    setCurrentMovie(){
+      this.toaster.info(`Pause Movie ${this.movieStore.name}`)
+      this.movieStore.setCurrentMovie()
+    }
+  }
+
 };
 </script>

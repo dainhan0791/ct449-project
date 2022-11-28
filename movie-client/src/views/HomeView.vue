@@ -1,5 +1,5 @@
 <template lang="">
-    <div className='home-page'>
+    <div class="container">
       <Header />
       <Form />
     </div>

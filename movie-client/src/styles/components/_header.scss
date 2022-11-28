@@ -1,10 +1,10 @@
 .header {
-  width: 1200px;
   margin: 0 auto;
   margin-top: 10px;
   h5 {
     font-size: 3.3rem;
-    text-shadow: 2px 3px 0px $color-1;
+    // text-shadow: 2px 3px 0px $color-1;
+    text-shadow: 2px 3px 0px $white;
     text-align: center;
     letter-spacing: 2px;
   }
@@ -45,7 +45,35 @@
     width: 40px;
     height: 40px;
     border-radius: 100%;
+    object-fit: cover;
+  }
+
+  .dark-knight-movies{
+    color: red;
+    
   }
   
 
 }
+
+.c-toast{
+  font-size: 14px !important;
+  margin-right: 200px !important;
+
+}
+.c-toast--default{
+  background-color: pink !important;
+  color: black !important;
+}
+.c-toast--success{
+  background-color: greenyellow !important;
+  color: black !important;
+
+}
+.c-toast--info{
+  background-color: $color-1 !important;
+}
+.c-toast--warning{
+  background-color: #ee3e38 !important;
+}
+

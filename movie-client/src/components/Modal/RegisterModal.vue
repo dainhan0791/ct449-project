@@ -88,6 +88,7 @@
                 id="formFile"
                 name="profileImage"
                 @change="onFileChange"
+                accept=".jpg, .jpeg, .png, .svg, .gif"
               />
             </div>
           </div>

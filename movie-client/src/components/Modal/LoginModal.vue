@@ -1,7 +1,7 @@
 <template >
   <!-- Modal -->
   <div
-    class="modal login-modal fade"
+    class="modal fade"
     tabindex="-1"
     id="LoginModal"
     aria-labelledby="exampleModalLabel"

@@ -1,4 +1,5 @@
 import Movie from "../models/MovieModel.js";
+
 const createMovie = async (req, res) => {
   const movie = new Movie(req.body);
   try {
@@ -27,12 +28,15 @@ const getMovies = async (req, res) => {
       "Sci-fi",
       "Music",
       "Family",
+      "Horror",
     ];
     genre === "all"
       ? (genre = [...genreOptions])
       : (genre = req.query.genre.split(","));
 
-    const movies = await Movie.find({ name: { $regex: search, $options: "i" } })
+    const movies = await Movie.find({
+      name: { $regex: search, $options: "x i" },
+    })
       .where("genre")
       .in([...genre])
       .sort({

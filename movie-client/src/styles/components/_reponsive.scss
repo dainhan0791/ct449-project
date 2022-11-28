@@ -1,0 +1,82 @@
+
+@media screen and (max-width: 599px) {
+    nav{
+      margin-top: 4px;
+     }
+     .c-toast{
+      margin-right: 110px !important;
+      font-size: 10px !important;
+      margin-top: 46px !important;
+    }
+    .title-website{
+      display: none;
+    }
+    .name{
+      font-size: 14px !important;
+    }
+    .search-movies{
+        input[type="text"] {
+            font-size: 1rem !important;
+            width: 70% !important;
+          }
+          input[type="submit"] {
+            width: 20% !important;
+          }
+    }
+  }
+
+  @media screen and (max-width: 599px)  {
+   
+    iframe{
+      width: 51% !important;
+    }
+   
+  }
+  @media screen and (min-width: 600px ) and (max-width: 800px)  {
+    .title-website{
+      display: none;
+    }
+    .c-toast{
+      margin-right: 150px !important;
+      font-size: 10px !important;
+      margin-top: 60px !important;
+    }
+    iframe{
+      width: 73% !important;
+
+    }
+   
+  }
+  
+  @media screen and (min-width: 768px ) and (max-width: 1023px)  {
+    body{
+      font-size: 10px;
+    }
+    .title-website{
+      display: none;
+    }
+    .c-toast{
+      margin-right: 200px !important;
+      font-size: 10px !important;
+      margin-top: 40px !important;
+    }
+    .dark-knight-movies{
+      font-size: 10px;
+    }
+    iframe{
+      width: 470px !important;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+   nav{
+    margin-top: 4px;
+   }
+   .c-toast{
+    margin-right: 240px
+     !important;
+     margin-top: 20px !important;
+    font-size: 14px !important;
+  }
+   
+  }

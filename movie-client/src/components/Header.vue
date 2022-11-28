@@ -1,6 +1,6 @@
 <template>
-  <div className="header row justify-content-between">
-    <div class="col-3">
+  <div class="align-center header row justify-content-between">
+    <div class="col-lg-3 col-6 col-md-6 col-sm-6">
       <nav>
         <ul>
           <RouterLink to="/" active-class="nav-active">
@@ -12,17 +12,25 @@
         </ul>
       </nav>
     </div>
-    <div class="col-6">
-      <h5>Light Movies</h5>
+    <div class="col-lg-6 title-website">
+      <p
+        class="
+          text-center text-uppercase
+          fs-3
+          font-monospace
+          dark-knight-movies
+        "
+      >
+        Dark knight movies
+      </p>
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-6 col-md-6 col-sm-6">
       <div class="d-flex justify-content-center align-items-end">
         <p class="text-center mx-1 font-monospace name">
           {{ this.userStore.displayName() }}
         </p>
         <img
           :src="this.userStore.displayProfilePicture()"
-          alt=""
           class="img-fluid profile-picture"
           role="button"
           id="dropdownMenuLink"
@@ -62,7 +70,15 @@
                   >Change Password
                 </a>
               </li>
-
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#AdminModal"
+                  >Admin
+                </a>
+              </li>
               <li>
                 <a class="dropdown-item" href="#" @click="userStore.logoutUser"
                   >Log Out</a
@@ -99,6 +115,8 @@
           :isSettingProfileImage="isSettingProfileImage"
           :isSettingPassword="isSettingPassword"
         />
+        <AdminModal/>
+        
       </div>
     </div>
   </div>
@@ -107,12 +125,16 @@
 import RegisterModal from "./Modal/RegisterModal.vue";
 import LoginModal from "./Modal/LoginModal.vue";
 import SettingModal from "./Modal/SettingModal.vue";
+import AdminModal from "./Modal/AdminModal.vue";
 import { useUserStore } from "../stores/UserStore";
+import { useMovieStore } from "../stores/MovieStore";
+
 export default {
   components: {
     RegisterModal,
     LoginModal,
     SettingModal,
+    AdminModal,
   },
   data() {
     return {
@@ -120,6 +142,7 @@ export default {
       isSettingName: false,
       isSettingProfileImage: false,
       isSettingPassword: false,
+      movieStore: useMovieStore(),
     };
   },
   methods: {
@@ -141,6 +164,8 @@ export default {
         this.isSettingProfileImage = false;
       }
     },
+
+   
   },
 };
 </script>
